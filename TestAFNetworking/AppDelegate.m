@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "GlobalTimelineViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +17,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    UITableViewController * viewController = [[GlobalTimelineViewController alloc]initWithStyle:UITableViewStylePlain];
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:viewController];
+    self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
+    self.window.rootViewController = nav;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
